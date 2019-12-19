@@ -1,15 +1,15 @@
 # Optimize multiple intelligibility socres using GAN
 
-##Usage steps
-####1. 
+## Usage steps
+#### 1. 
 Install SIIB measure (python version) 
 [PySIIB](https://github.com/kamo-naoyuki/pySIIB)
 
-####2.
+#### 2.
 Prepare data and change data path in MultiGAN.py
 A tiny dataset example is given in ./database
 
-####3.
+#### 3.
 Training
 run: python MultiGAN.py
 
