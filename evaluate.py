@@ -4,9 +4,9 @@ from audio_util import *
 import numpy as np
 import os
 
-enhan_path = '/home/smg/haoyuli/HC/output/testpost/Eng_multi61/Modify/'
-clean_path = '/home/smg/haoyuli/HC/output/testpost/Eng_multi61/Clean/'
-noise_path = '/home/smg/haoyuli/HC/output/testpost/Eng_multi61/Noise/'
+enhan_path = '/home/smg/haoyuli/HC/output/Eng_ManyPre/Modify/'
+clean_path = '/home/smg/haoyuli/HC/output/Eng_ManyPre/Clean/'
+noise_path = '/home/smg/haoyuli/HC/output/Eng_ManyPre/Noise/'
 
 ESTOI_raw = []
 ESTOI_mod = []
@@ -25,7 +25,7 @@ for i in range(810):
     SIIB_mod.append(SIIB_Wrapper_eng(clean,enhan+noise,fs))
     print("%d finished"%(i+1))
 
-print("result 61:")
+print("result 86:")
 print('ESTOI: Raw speech %.4f  Modified speech %.4f'%(np.mean(ESTOI_raw),np.mean(ESTOI_mod)))
 print('SIIB: Raw speech %.4f  Modified speech %.4f'%(np.mean(SIIB_raw),np.mean(SIIB_mod)))
 

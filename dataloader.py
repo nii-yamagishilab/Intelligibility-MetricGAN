@@ -90,13 +90,13 @@ def create_dataloader(filelist, noise_path, clean_path=None, loader='G'):
         return DataLoader(dataset=Generator_train_dataset(filelist, noise_path),
                           batch_size=1,
                           shuffle=True,
-                          num_workers=8,
+                          num_workers=6,
                           drop_last=True)
     elif loader=='D':
         return DataLoader(dataset=Discriminator_train_dataset(filelist, noise_path, clean_path),
                           batch_size=1,
                           shuffle=True,
-                          num_workers=8,
+                          num_workers=6,
                           drop_last=True)
     else:
         raise Exception("No such dataloader type!")

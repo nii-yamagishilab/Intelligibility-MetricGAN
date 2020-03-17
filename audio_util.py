@@ -102,6 +102,23 @@ def mapping_func_eng(x):
     return y
 
 
+def SIIB_Wrapper_ger(x,y,fs):
+    minL = min(len(x),len(y))
+    x = x[:minL]
+    y = y[:minL]
+    M = len(x)/fs
+    if(M<20):
+        x = np.hstack([x]*round(50/M))
+        y = np.hstack([y]*round(50/M))
+    
+    return mapping_func_ger(SIIB(x,y,fs,gauss=True))
+
+def mapping_func_ger(x):
+    y = 1/(1+np.exp(-0.09*(x-25)))
+    return y
+
+
+
 def read_STOI(clean_root, noise_root, enhanced_file):
     f=enhanced_file.split('/')[-1]
     wave_name=f.split('_')[-1].split('@')[0]
@@ -113,7 +130,7 @@ def read_STOI(clean_root, noise_root, enhanced_file):
     clean_wav = clean_wav[:minL]
     noise_wav = noise_wav[:minL]
     enhanced_wav = enhanced_wav[:minL]
-    stoi_score = stoi(clean_wav, enhanced_wav + noise_wav, fs, extended=True)    
+    stoi_score = stoi(clean_wav, enhanced_wav + noise_wav, fs, extended=True) * 2    
     return stoi_score
     
 # Parallel computing for accelerating    
@@ -133,7 +150,7 @@ def read_SIIB(clean_root, noise_root, enhanced_file):
     noise_wav = noise_wav[:minL]
     enhanced_wav = enhanced_wav[:minL]
     
-    siib_score = SIIB_Wrapper_eng(clean_wav, enhanced_wav + noise_wav, fs)  
+    siib_score = SIIB_Wrapper_ger(clean_wav, enhanced_wav + noise_wav, fs)  
     return siib_score
     
 # Parallel computing for accelerating    
@@ -152,7 +169,7 @@ def read_SIIB_DRC(clean_root, noise_root, enhanced_file):
     noise_wav = noise_wav[:minL]
     enhanced_wav = enhanced_wav[:minL]
     
-    siib_score = SIIB_Wrapper_eng(clean_wav, enhanced_wav + noise_wav, fs)  
+    siib_score = SIIB_Wrapper_ger(clean_wav, enhanced_wav + noise_wav, fs)  
     return siib_score
 
 def read_batch_SIIB_DRC(clean_root, noise_root, enhanced_list):
@@ -170,7 +187,7 @@ def read_STOI_DRC(clean_root, noise_root, enhanced_file):
     noise_wav = noise_wav[:minL]
     enhanced_wav = enhanced_wav[:minL]
     
-    stoi_score = stoi(clean_wav, enhanced_wav + noise_wav, fs, extended=True) 
+    stoi_score = stoi(clean_wav, enhanced_wav + noise_wav, fs, extended=True) * 2
     return stoi_score
 
 def read_batch_STOI_DRC(clean_root, noise_root, enhanced_list):

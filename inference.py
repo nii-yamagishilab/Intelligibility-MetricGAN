@@ -10,12 +10,12 @@ from torch.utils.data import *
 import os
 import librosa
 import numpy as np
-import pdb
 
-chkpt_path = '/home/smg/haoyuli/Project-SI/trained_model/MultiGAN/chkpt_60.pt'
-mod_path = '/home/smg/haoyuli/HC/output/testpost/Spanish_multi60/Modify'
-raw_path = '/home/smg/haoyuli/HC/output/testpost/Spanish_multi60/Clean'
-noi_path = '/home/smg/haoyuli/HC/output/testpost/Spanish_multi60/Noise'
+chkpt_path = './trained_model/chkpt_26.pt' # location of trained model
+# locations of enhanced output files 
+mod_path = './inference/English/Modify'
+raw_path = './inference/English/Clean'
+noi_path = './inference/English/Noise'
 
 os.makedirs(mod_path, exist_ok=True)
 os.makedirs(raw_path, exist_ok=True)
@@ -26,9 +26,9 @@ fs = 44100
 
 
 print('Reading path of processing data...')
-Test_Noise_path ='/home/smg/haoyuli/SiibGAN/database/Spanish/Test/Noise/'
-Test_Clean_path = '/home/smg/haoyuli/SiibGAN/database/Spanish/Test/Clean/'
-Generator_Test_paths = get_filepaths('/home/smg/haoyuli/SiibGAN/database/Spanish/Test/Clean/') 
+Test_Noise_path ='/home/smg/haoyuli/SiibGAN/database/Test/Noise/'
+Test_Clean_path = '/home/smg/haoyuli/SiibGAN/database/Test/Clean/'
+Generator_Test_paths = get_filepaths(Test_Clean_path)
 
 
 print('Load Model...')
@@ -58,10 +58,10 @@ with torch.no_grad():
         clean_power = torch.pow(clean_in, 2/0.30)
         beta_2 = torch.sum(clean_power) / torch.sum(torch.pow(mask,2)*clean_power)
         beta_p = beta_2 ** (0.30/2)
-        # post-processing: clip 16k upper mask
         mask = torch.pow(mask, 0.30) * beta_p
+        # Do not change high frequency components in inference stage, since they do not affect intelligibility actually
         mask[0,:,380:] = 1.0
-        
+
         enh_mag = clean_in * mask
         enh_mag = (enh_mag**(1/0.30)).detach().cpu().squeeze(0).numpy()
         enh_wav = SP_to_wav(enh_mag.T, clean_phase)
