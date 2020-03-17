@@ -8,14 +8,14 @@
 Install SIIB measure (python version) 
 [PySIIB](https://github.com/kamo-naoyuki/pySIIB)
 
-*Another Dependencies:
-    *python 3.7
-    *librosa==0.7.1
-    *numpy==1.17.2
-    *scipy==1.3.1
-    *torch==1.2.0
-    *tqdm==4.36.1
-    *matplotlib==3.1.1
+* Another Dependencies:
+    * python 3.7
+    * librosa==0.7.1
+    * numpy==1.17.2
+    * scipy==1.3.1
+    * torch==1.2.0
+    * tqdm==4.36.1
+    * matplotlib==3.1.1
 
 ### 2. Prepare training data
 
