@@ -1,12 +1,12 @@
 # Speech Intelligibility Enhancement using GAN 	<br/>(iMetricGAN, PyTorch implementation)
 
+
 ## Usage steps
 
 
 ### 1. Install dependencies
 
-Install SIIB measure (python version) 
-[PySIIB](https://github.com/kamo-naoyuki/pySIIB)
+* Install SIIB measure [PySIIB](https://github.com/kamo-naoyuki/pySIIB) (python version)
 
 * Another Dependencies:
     * python 3.7
@@ -19,9 +19,9 @@ Install SIIB measure (python version)
 
 ### 2. Prepare training data
 
-Prepare data and change data path in **MultiGAN.py**
+Prepare your training data and change data path in **MultiGAN.py**
 
-A tiny dataset format example is given in ***./database***
+A toy dataset format example is given in ***./database***
 
 ### 3. Training
 
@@ -31,11 +31,11 @@ models will be saved in ***./chkpt***
 
 ### 4. Inference
 
-Prepare the data you would like to process, then change data path and model path in **inference.py**
+Prepare the test data, then change data path and model path in **inference.py**
 
 run: `python inference.py`
 
-A pre-trained model is provided in ***./trained_model*** (It was trained using RMS=0.02 speech materials. So please normalize your raw speech input to RMS=0.02 if you would like to use this pre-trained model.)
+A pre-trained model is provided in  ***./trained_model***  <br/>(It was trained using RMS=0.02 speech materials. So please normalize your raw speech input to RMS=0.02 if you would like to use this pre-trained model.)
 
 ---
 Note: This project was partially based on [MetricGAN](https://github.com/JasonSWFu/MetricGAN) codes.
