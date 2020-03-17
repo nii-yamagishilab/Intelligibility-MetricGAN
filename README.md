@@ -33,11 +33,11 @@ models will be saved in ***./chkpt***
 
 ### 4. Inference
 
-Prepare the test data, then change data path and model path in **inference.py**
+Prepare the test data, then change paths in **inference.py**
 
 run: `python inference.py`
 
-A pre-trained model is provided in  ***./trained_model***  <br/>(It was trained using 44.1 kHz speech materials at RMS=0.02. So please normalize your 44.1kHz raw speech input to RMS=0.02 if you would like to use this pre-trained model.)
+A pre-trained model is provided in  ***./trained_model***  <br/>It was trained using 44.1 kHz speech materials at RMS=0.02. So please normalize your 44.1kHz raw speech input to RMS=0.02 if you would like to use this pre-trained model.
 
 ---
 Note: This project was partially based on [MetricGAN](https://github.com/JasonSWFu/MetricGAN) codes.
