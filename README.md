@@ -2,8 +2,9 @@
 
 Implementation of the paper: [iMetricGAN: Intelligibility Enhancement for Speech-in-Noise usingGenerative Adversarial Network-based Metric Learning)]()
 
-## Usage steps
+[Audio samples](https://nii-yamagishilab.github.io/samples-iMetricGAN)
 
+## Usage steps
 
 ### 1. Install dependencies
 
