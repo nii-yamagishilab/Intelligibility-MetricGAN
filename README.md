@@ -40,6 +40,8 @@ run: `python inference.py`
 
 A pre-trained model is provided in  ***./trained_model***  <br/>It was trained using 44.1 kHz speech materials at RMS=0.02. So please normalize your 44.1kHz raw speech input to RMS=0.02 if you would like to use this pre-trained model.
 
+---
+
 ### Authors
 * Haoyu Li
 * Szu-Wei Fu
