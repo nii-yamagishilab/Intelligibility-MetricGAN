@@ -1,5 +1,6 @@
-# Speech Intelligibility Enhancement using GAN 	<br/>(iMetricGAN, PyTorch implementation)
+# Speech Intelligibility Enhancement using GAN 	
 
+Implementation of the paper: [iMetricGAN: Intelligibility Enhancement for Speech-in-Noise usingGenerative Adversarial Network-based Metric Learning)]()
 
 ## Usage steps
 
@@ -39,5 +40,15 @@ run: `python inference.py`
 
 A pre-trained model is provided in  ***./trained_model***  <br/>It was trained using 44.1 kHz speech materials at RMS=0.02. So please normalize your 44.1kHz raw speech input to RMS=0.02 if you would like to use this pre-trained model.
 
----
-Note: This project was partially based on [MetricGAN](https://github.com/JasonSWFu/MetricGAN) codes.
+### Authors
+* Haoyu Li
+* Szu-Wei Fu
+* Yu Tsao
+* [Junichi Yamagishi](https://nii-yamagishilab.github.io/)
+
+### Acknowlegment
+
+This work was partially supported by a JST CREST Grant (JPMJCR18A6, VoicePersonae project), Japan, and by MEXT KAKENHI Grants (16H06302, 17H04687, 18H04120, 18H04112, 18KT0051, 19K24372), Japan. The numerical calculations were carried out on the TSUBAME 3.0 supercomputer at the Tokyo Institute of Technology.
+
+
+This project was partially based on [MetricGAN](https://github.com/JasonSWFu/MetricGAN) codes.
