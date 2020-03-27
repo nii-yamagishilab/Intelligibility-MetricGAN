@@ -58,7 +58,7 @@ This project was partially based on [MetricGAN](https://github.com/JasonSWFu/Met
 
 
 ---
-### Licence
+### License
 
 BSD 3-Clause License
 
