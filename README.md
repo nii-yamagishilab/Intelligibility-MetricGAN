@@ -10,6 +10,8 @@ Implementation of the paper: [iMetricGAN: Intelligibility Enhancement for Speech
 
 * Install SIIB measure [PySIIB](https://github.com/kamo-naoyuki/pySIIB) (python version)
 
+* Install STOI measure [PySTOI](https://github.com/mpariente/pystoi)
+
 * Another Dependencies:
     * python 3.7
     * librosa==0.7.1
