@@ -1,6 +1,6 @@
 # Speech Intelligibility Enhancement using GAN 	
 
-Implementation of the paper: [iMetricGAN: Intelligibility Enhancement for Speech-in-Noise usingGenerative Adversarial Network-based Metric Learning](https://arxiv.org/abs/2004.00932)
+Implementation of the paper: [iMetricGAN: Intelligibility Enhancement for Speech-in-Noise using Generative Adversarial Network-based Metric Learning](https://arxiv.org/abs/2004.00932)
 
 [Audio samples](https://nii-yamagishilab.github.io/samples-iMetricGAN)
 
